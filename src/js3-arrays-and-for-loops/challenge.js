@@ -5,8 +5,7 @@
 /* 
   All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
-  and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
-  share it with the group!
+  and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and share it with the group!
 */
 
 /**
@@ -21,8 +20,21 @@
  * @return {string} "Bacon+Lettuce+Tomato"
  */
 
-export const createRecipeString = (ingredientsArr) => {
-  return;
+export const createRecipeString = (ingredientsArr) => { // !!! USE JOIN METHOD !!! 
+  let ingredient = "";
+  let finalRecipe = "";
+
+  for (let i = 0; i < ingredientsArr.length; i++) {
+    ingredient = ingredientsArr[i];
+
+    if (finalRecipe.length == 0) {
+      finalRecipe = ingredient;
+    } else {
+      finalRecipe = finalRecipe + "+" + ingredient;
+    }
+  }
+
+  return finalRecipe;
 };
 
 /**
@@ -33,7 +45,17 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+  let newArray = [];
+
+  let firstItem = itemsArr.shift();
+  itemsArr.unshift(firstItem);
+
+  let lastItem = itemsArr.pop();
+  itemsArr.push(lastItem);
+
+  newArray.push(firstItem, lastItem);
+
+  return newArray;
 };
 
 /**
@@ -44,7 +66,13 @@ export const getFirstAndLastItems = (itemsArr) => {
  */
 
 export const totalScores = (scoreArr) => {
-  return;
+  let totalScore = 0;
+
+  // needed reducer below for reduce method
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  totalScore = scoreArr.reduce(reducer);
+
+  return totalScore;
 };
 
 /**
@@ -52,7 +80,7 @@ export const totalScores = (scoreArr) => {
  */
 
 /**
- * A function that takes an number and returns the total of the range of numbers between 0 and the given number.
+ * A function that takes a number and returns the total of the range of numbers between 0 and the given number.
  * e.g. 10 => 0+1+2+3+4+5+6+7+8+9+10 = 55.
  *
  * @param {number} rangeMax 10
@@ -60,7 +88,17 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let rangeArr = [];
+  let totalRange = 0;
+
+  for (let i = 0; i <= rangeMax; i++) {
+    rangeArr.push(i);
+  }
+  // needed reducer below for reduce method
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  totalRange = rangeArr.reduce(reducer);
+
+  return totalRange;
 };
 
 /**
@@ -71,7 +109,12 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
-  return;
+  let myArray = [...itemsArr];
+
+  const myLastItem = myArray.pop();
+  myArray.unshift(myLastItem);
+
+  return myArray;
 };
 
 /**
@@ -89,7 +132,14 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-  return;
+  let myOddNumbersArr = [];
+  for (let index = 0; index < numberArr.length; index++) {
+    if ( numberArr[index] % 2 !== 0) {
+      myOddNumbersArr.push(numberArr[index]); 
+    }   
+  }
+
+  return myOddNumbersArr;
 };
 
 /**
@@ -105,7 +155,17 @@ export const removeEvenNumbers = (numberArr) => {
  */
 
 export const generateAverage = (numberArr) => {
-  return;
+  let average = 0;
+
+  if (numberArr.length == 0) {
+    return average;
+  } else {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    let sum = numberArr.reduce(reducer);
+    average = Math.ceil(sum / numberArr.length);
+
+    return average;
+  }
 };
 
 /**
@@ -116,7 +176,11 @@ export const generateAverage = (numberArr) => {
  */
 
 export const reverseOrder = (toReverseArr) => {
-  return;
+  let reversedArr = [...toReverseArr];
+
+  reversedArr.reverse();
+
+  return reversedArr;
 };
 
 /**
