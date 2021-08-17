@@ -202,7 +202,18 @@ export const reverseOrder = (toReverseArr) => {
  */
 
 export const generateHighscores = (playersArr, scoresArr) => {
-  return;
+  let formattedArr = [];
+  let playerPosition = 1;
+
+  if (playersArr.length == scoresArr.length && playersArr.length != 0 && scoresArr != 0) {
+    for (let index = 0; index < playersArr.length; index++) {
+        formattedArr.push("P:" + playerPosition++ + " " + playersArr[index] + " scored " + scoresArr[index] );
+    }
+  } else {
+    return "invalid inputs";
+  }
+
+  return formattedArr;
 };
 
 /**
