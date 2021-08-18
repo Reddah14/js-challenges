@@ -22,7 +22,11 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+   const myTrueArr = booleanArr.filter( bool => {
+    return bool === true;
+  })
+
+  return myTrueArr;
 };
 
 /**
@@ -34,7 +38,11 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  const percentageArr = numbersArr.map((number) => {
+    return (number * 100).toString() + "%";
+  })
+
+  return percentageArr;
 };
 
 /**
@@ -47,7 +55,11 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  const myNamedArr = possessionsArr.map((possession) => {
+    return name + " " + possession;
+  })
+
+  return myNamedArr;
 };
 
 /**
