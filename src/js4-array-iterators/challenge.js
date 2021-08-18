@@ -148,12 +148,13 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => { // change ".forEach" to ".map"
     const cleanStr = string.trim().toLowerCase();
+    
     return cleanStr;
   });
 
-  // console.log(???)
+  // console.log(???) => forEach will always return undefined so you cannot store on a variable because it will always be undefined.
 
   const joinedString = cleanedArr.join("+");
 

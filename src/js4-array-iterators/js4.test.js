@@ -188,7 +188,7 @@ describe("Testing filterBooksBySearch()", () => {
   });
 });
 
-xdescribe("Testing formatStringArray()", () => {
+describe("Testing formatStringArray()", () => {
   it("Should return a String", () => {
     expect(typeof formatStringArray(["  front"])).toBe("string");
   });
