@@ -82,9 +82,19 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  * @param {string} numberString - "1+2+3+4+5"
  * @return {number[]} [1, 2, 3, 4, 5]
  */
+// function to split array
+function splitMyArray(arrayParameter, valueToSplit) {
+  const splitedArr = arrayParameter.split(valueToSplit);
+
+  return splitedArr;
+}
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  const numberArr = splitMyArray(numberString, "+").map((element) => {
+    return parseFloat(element);
+  })
+
+  return numberArr;
 };
 
 /**
@@ -96,7 +106,11 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  const oddEvenArray = splitMyArray(numberString, "+").map((number) => {
+    return number % 2 === 0 ? "even" : "odd"; 
+  })
+
+  return oddEvenArray;
 };
 
 /**
@@ -109,7 +123,12 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  const filteredBooks = booksArr.filter( book => {
+
+    return book.includes(searchTerm);
+  })
+
+  return filteredBooks;
 };
 
 /**
