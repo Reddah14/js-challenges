@@ -218,7 +218,7 @@ describe("Testing formatStringArray()", () => {
   });
 });
 
-xdescribe("Testing formatString()", () => {
+describe("Testing formatString()", () => {
   it("Should NOT return undefined", () => {
     expect(formatString("  defined")).toBeDefined();
   });

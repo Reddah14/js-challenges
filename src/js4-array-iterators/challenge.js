@@ -175,8 +175,19 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  return;
+  if (!string) {
+    return [];
+  } else {
+    const cleanedString = string.replace(/[^A-Za-z]/g,'').split("");
+
+    const fixedCasesArray = cleanedString.map((element, index) => {
+      return index % 2 === 0 ? element.toUpperCase() : element.toLowerCase();
+    });
+  
+    return fixedCasesArray;
+  }
 };
+
 
 /**
  * Expert Challenge
