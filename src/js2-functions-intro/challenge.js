@@ -30,8 +30,14 @@ export const createFullName = (firstName, lastName) => {
  * @param {number} number2 200
  * @returns {number} 100
  */
-export const findSmallestNumber = (/* Write the parameters here */) => {
-  /* Write your code here */
+export const findSmallestNumber = (numA, numB) => {
+  if (numA > numB) {
+    return numB;
+  } else if (numA < numB) {
+    return numA;
+  } else {
+    return "They are equal!";
+  }
 };
 
 /**
@@ -42,8 +48,9 @@ export const findSmallestNumber = (/* Write the parameters here */) => {
  * @param {number} number2 6
  * @returns {number} 18
  */
-export const multiplyNumbers = (/* Write the parameters here */) => {
-  /* Write your code here */
+export const multiplyNumbers = (numA, numB) => {
+  const result = numA * numB;
+  return result;
 };
 
 /* Intermediate Challenges */
@@ -59,7 +66,13 @@ export const multiplyNumbers = (/* Write the parameters here */) => {
  * @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
  */
 export const checkIfNewHighScore = (score, highScore) => {
-  /* Write your code here */
+  if (score > highScore) {
+    return "You got a new high score!";
+  } else if (score === highScore) {
+    return "So close!";
+  } else {
+    return "Better luck next time!";
+  }
 };
 
 /**
@@ -69,7 +82,9 @@ export const checkIfNewHighScore = (score, highScore) => {
  * @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
  */
 export const celsiusToFahrenheit = (tempInCelsius) => {
-  /* Write your code here */
+  let tempInFahr = (tempInCelsius * 9/5) + 32;
+
+  return `${tempInCelsius} degrees celsius is ${tempInFahr} degrees fahrenheit`;
 };
 
 /**

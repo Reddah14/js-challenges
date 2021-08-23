@@ -39,10 +39,14 @@ var createFullName = function createFullName(firstName, lastName) {
 
 exports.createFullName = createFullName;
 
-var findSmallestNumber = function findSmallestNumber()
-/* Write the parameters here */
-{
-  /* Write your code here */
+var findSmallestNumber = function findSmallestNumber(numA, numB) {
+  if (numA > numB) {
+    return numB;
+  } else if (numA < numB) {
+    return numA;
+  } else {
+    return "They are equal!";
+  }
 };
 /**
  * A function that takes two numbers as input, multiplies them together and returns the product.
@@ -56,10 +60,9 @@ var findSmallestNumber = function findSmallestNumber()
 
 exports.findSmallestNumber = findSmallestNumber;
 
-var multiplyNumbers = function multiplyNumbers()
-/* Write the parameters here */
-{
-  /* Write your code here */
+var multiplyNumbers = function multiplyNumbers(numA, numB) {
+  var result = numA * numB;
+  return result;
 };
 /* Intermediate Challenges */
 
@@ -78,7 +81,13 @@ var multiplyNumbers = function multiplyNumbers()
 exports.multiplyNumbers = multiplyNumbers;
 
 var checkIfNewHighScore = function checkIfNewHighScore(score, highScore) {
-  /* Write your code here */
+  if (score > highScore) {
+    return "You got a new high score!";
+  } else if (score === highScore) {
+    return "So close!";
+  } else {
+    return "Better luck next time!";
+  }
 };
 /**
  * A function that converts a temperature a in celsius to fahrenheit and outputs it in a string format -> "15 degrees celsius is 59 degrees fahrenheit".
@@ -91,7 +100,8 @@ var checkIfNewHighScore = function checkIfNewHighScore(score, highScore) {
 exports.checkIfNewHighScore = checkIfNewHighScore;
 
 var celsiusToFahrenheit = function celsiusToFahrenheit(tempInCelsius) {
-  /* Write your code here */
+  var tempInFahr = tempInCelsius * 9 / 5 + 32;
+  return "".concat(tempInCelsius, " degrees celsius is ").concat(tempInFahr, " degrees fahrenheit");
 };
 /**
  * A function that calculates the number of snickers needed for the rest of your life based on the number you eat per day,
