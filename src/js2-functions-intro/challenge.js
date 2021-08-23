@@ -97,7 +97,10 @@ export const celsiusToFahrenheit = (tempInCelsius) => {
  * @returns {number} 47450
  */
 export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
-  /* Write your code here */
+  const ageLeft = maxAge - age;
+  const snickersForLife = (ageLeft * 365) * snickersPerDay;
+
+  return snickersForLife;
 };
 
 /* Advanced Challenges */
@@ -117,7 +120,23 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
-  /* Write your code here */
+  if ( score > 100 || score < 0 || typeof score !== "number" ) {
+    return "Score unavailable";
+  } 
+
+  if (score <= 100 && score >= 80) {
+    return "A";
+  } else if ( score <= 79 && score >= 70) {
+    return "B";
+  } else if ( score <= 69 && score >= 60) {
+    return "C";
+  } else if ( score <= 59 && score >= 50) {
+    return "D";
+  } else if ( score <= 49 && score >= 40) {
+    return "E";
+  } else {
+    return "F";
+  }
 };
 
 /**
@@ -127,7 +146,9 @@ export const getGrade = (score) => {
  * @returns {number} 28.27
  */
 export const calculateAreaOfCircle = (radius) => {
-  /* Write your code here */
+    const area = (radius * radius) * Math.PI;
+
+    return parseFloat(area.toFixed(2));
 };
 
 /* Expert Challenge */

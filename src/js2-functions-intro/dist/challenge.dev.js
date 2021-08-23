@@ -117,7 +117,9 @@ var celsiusToFahrenheit = function celsiusToFahrenheit(tempInCelsius) {
 exports.celsiusToFahrenheit = celsiusToFahrenheit;
 
 var calculateLifetimeSupply = function calculateLifetimeSupply(snickersPerDay, age, maxAge) {
-  /* Write your code here */
+  var ageLeft = maxAge - age;
+  var snickersForLife = ageLeft * 365 * snickersPerDay;
+  return snickersForLife;
 };
 /* Advanced Challenges */
 
@@ -140,7 +142,23 @@ var calculateLifetimeSupply = function calculateLifetimeSupply(snickersPerDay, a
 exports.calculateLifetimeSupply = calculateLifetimeSupply;
 
 var getGrade = function getGrade(score) {
-  /* Write your code here */
+  if (score > 100 || score < 0 || typeof score !== "number") {
+    return "Score unavailable";
+  }
+
+  if (score <= 100 && score >= 80) {
+    return "A";
+  } else if (score <= 79 && score >= 70) {
+    return "B";
+  } else if (score <= 69 && score >= 60) {
+    return "C";
+  } else if (score <= 59 && score >= 50) {
+    return "D";
+  } else if (score <= 49 && score >= 40) {
+    return "E";
+  } else {
+    return "F";
+  }
 };
 /**
  * A function that find the area of a circle to 2 decimal places.
@@ -153,7 +171,8 @@ var getGrade = function getGrade(score) {
 exports.getGrade = getGrade;
 
 var calculateAreaOfCircle = function calculateAreaOfCircle(radius) {
-  /* Write your code here */
+  var area = radius * radius * Math.PI;
+  return parseFloat(area.toFixed(2));
 };
 /* Expert Challenge */
 

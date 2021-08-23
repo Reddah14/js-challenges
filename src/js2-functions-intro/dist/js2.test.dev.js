@@ -76,7 +76,7 @@ describe("celsiusToFahrenheit() tests", function () {
     expect(celsiusToFahrenheit(15)).toBe("15 degrees celsius is 59 degrees fahrenheit");
   });
 });
-xdescribe("calculateLifeTimeSupply() tests", function () {
+describe("calculateLifeTimeSupply() tests", function () {
   it("Should have a return", function () {
     expect(calculateLifetimeSupply(2, 25, 90)).toBeDefined();
   });
@@ -87,7 +87,7 @@ xdescribe("calculateLifeTimeSupply() tests", function () {
     expect(calculateLifetimeSupply(1.5, 22, 77)).toBe(30112.5);
   });
 });
-xdescribe("getGrade() tests", function () {
+describe("getGrade() tests", function () {
   it("Should have a return", function () {
     expect(getGrade(70)).toBeDefined();
   });
@@ -122,7 +122,7 @@ xdescribe("getGrade() tests", function () {
     expect(getGrade(0)).toBe("F");
   });
 });
-xdescribe("calculateAreaOfCircle() tests", function () {
+describe("calculateAreaOfCircle() tests", function () {
   it("Should have a return", function () {
     expect(calculateAreaOfCircle(3)).toBeDefined();
   });
