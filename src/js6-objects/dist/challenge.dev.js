@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.mergeFurniture = exports.setSafeAllergens = exports.getUserAddress = exports.accessGivenKey = exports.splitFullNameToFirstAndLast = exports.setUserName = exports.makeSpaceship = exports.setFurnitureStoreLocation = exports.getFurniturePrice = void 0;
+
 /* This challenge build upon previous knowledge and introduces the use of objects */
 
 /* 
@@ -20,10 +27,9 @@
  * @param {{name: string, price: number}} furniture - A piece of furniture from the catalogue
  * @return {number} The price of the piece of furniture
  */
-export const getFurniturePrice = (furniture) => {
+var getFurniturePrice = function getFurniturePrice(furniture) {
   return furniture.price;
 };
-
 /**
  * A function to attach to a store location to a furniture object from the catalogue
  *
@@ -31,12 +37,14 @@ export const getFurniturePrice = (furniture) => {
  * @param {string} location - A store location to attach to a piece of furniture
  * @returns {{name: string, price: number, location: string}} furniture - A furniture object from the catalogue
  */
-export const setFurnitureStoreLocation = (furniture, location) => {
-  furniture.location = location;
 
+
+exports.getFurniturePrice = getFurniturePrice;
+
+var setFurnitureStoreLocation = function setFurnitureStoreLocation(furniture, location) {
+  furniture.location = location;
   return furniture;
 };
-
 /**
  * A function which takes a selection of arguments relating to a space ship and uses them
  * to create a space ship object
@@ -47,15 +55,18 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  * @param {boolean} canTravelSolarSystems The ability for the space ship to travel to different solar systems
  * @returns {{name: string, noOfSeats: number, engineType: string, canTravelSolarSystems: boolean}} spaceship - The space ship object
  */
-export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
+
+
+exports.setFurnitureStoreLocation = setFurnitureStoreLocation;
+
+var makeSpaceship = function makeSpaceship(name, noOfSeats, engineType, canTravelSolarSystems) {
   return {
     name: name,
     noOfSeats: noOfSeats,
     engineType: engineType,
     canTravelSolarSystems: canTravelSolarSystems
-  }
+  };
 };
-
 /* Intermediate Challenges */
 
 /**
@@ -65,7 +76,11 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  * @param {string} username - A username to attach
  * @returns {{name: string, username: string}} User - The user object with the same username or a new one
  */
-export const setUserName = (user, username) => {
+
+
+exports.makeSpaceship = makeSpaceship;
+
+var setUserName = function setUserName(user, username) {
   if (!user.username) {
     user.username = username;
     return user;
@@ -73,7 +88,6 @@ export const setUserName = (user, username) => {
     return user;
   }
 };
-
 /**
  * A function which takes a customer object from the database and returns the same object where the name has been
  * split into first and last name and reattached to the object
@@ -81,16 +95,18 @@ export const setUserName = (user, username) => {
  * @param {{fullName: string,}} customer A customer object from the database
  * @returns {{fullName: string, firstName: string, lastName: string}} A customer object from the database with the name separated into first and last
  */
-export const splitFullNameToFirstAndLast = (customer) => {
-  const splitFullNameArray = customer.fullName.split(" ");
 
+
+exports.setUserName = setUserName;
+
+var splitFullNameToFirstAndLast = function splitFullNameToFirstAndLast(customer) {
+  var splitFullNameArray = customer.fullName.split(" ");
   return customer = {
     fullName: customer.fullName,
     firstName: splitFullNameArray[0],
     lastName: splitFullNameArray[1]
   };
 };
-
 /**
  * A function which access a given key on an object
  *
@@ -100,10 +116,13 @@ export const splitFullNameToFirstAndLast = (customer) => {
  * @param {string} key A key to access on the object
  * @returns {any} value - The value you have accessed on the object
  */
-export const accessGivenKey = (object, key) => {
+
+
+exports.splitFullNameToFirstAndLast = splitFullNameToFirstAndLast;
+
+var accessGivenKey = function accessGivenKey(object, key) {
   return object[key];
 };
-
 /* Advanced Challenges */
 
 /**
@@ -113,12 +132,14 @@ export const accessGivenKey = (object, key) => {
  * @param {{id: number, name: string, address: {line1: string, line2: string, city: string, postcode: string}}} user - A user object from the database
  * @returns {string} An address string for a shipping label
  */
-export const getUserAddress = (user) => {
-  const addressToPrint = `${user.address.line1} ${user.address.line2} ${user.address.city} ${user.address.postcode}`;
 
+
+exports.accessGivenKey = accessGivenKey;
+
+var getUserAddress = function getUserAddress(user) {
+  var addressToPrint = "".concat(user.address.line1, " ").concat(user.address.line2, " ").concat(user.address.city, " ").concat(user.address.postcode);
   return addressToPrint;
 };
-
 /**
  * A function that given a customer for the restaurant with a list of known allergies and a list of allergens in an
  * array, will attach an array of allergens safe for the customer to eat to the customer object and return it
@@ -127,10 +148,11 @@ export const getUserAddress = (user) => {
  * @param {string[]} allergenList - A list of all known allergens
  * @return {{id: number, name: string, allergies: string[], safeAllergens: string[]}} customer
  */
-export const setSafeAllergens = (customer, allergenList) => {
 
-};
 
+exports.getUserAddress = getUserAddress;
+
+var setSafeAllergens = function setSafeAllergens(customer, allergenList) {};
 /* Expert Challenge */
 
 /**
@@ -141,8 +163,12 @@ export const setSafeAllergens = (customer, allergenList) => {
  * @param {{id: number, name: string, price: number, isAvailable: boolean}} furnitureProductData - All of the data about the furniture product
  * @returns {{id: number, location: string, sku: string, name: string, price: number, isAvailable: boolean}}
  */
-export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
-  const generalInfo = {
+
+
+exports.setSafeAllergens = setSafeAllergens;
+
+var mergeFurniture = function mergeFurniture(furnitureLocationData, furnitureProductData) {
+  var generalInfo = {
     id: furnitureProductData.id,
     location: furnitureLocationData.location,
     sku: furnitureLocationData.sku,
@@ -150,7 +176,7 @@ export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
     price: furnitureProductData.price,
     isAvailable: furnitureProductData.isAvailable
   };
-
   return generalInfo;
 };
 
+exports.mergeFurniture = mergeFurniture;

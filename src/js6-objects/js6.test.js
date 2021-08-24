@@ -247,7 +247,7 @@ xdescribe("setSafeAllergens() tests", () => {
   });
 });
 
-xdescribe("mergeFurniture() tests", () => {
+describe("mergeFurniture() tests", () => {
   const tableLocationInfo = { id: 101, location: "Bristol", sku: "bXpGsZC2j4" };
   const tableProductInfo = { id: 101, name: "lack", price: 6, isAvailable: true };
 
