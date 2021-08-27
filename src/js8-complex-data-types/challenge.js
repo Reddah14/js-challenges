@@ -17,7 +17,12 @@
  * @returns {string[]} A list of the employees quotes for the website
  */
 export const getEmployeeQuotes = (employeeArr) => {
-  // Write code here
+  let quotesArray = [];
+  employeeArr.forEach(employee => {
+     quotesArray.push(employee.quote);
+  })
+
+  return quotesArray;
 };
 
 /**
@@ -27,7 +32,11 @@ export const getEmployeeQuotes = (employeeArr) => {
  * @returns {{name: string, quote: string, yearsEmployed: number, isManagement: boolean}[]} An array containing only managers
  */
 export const getTheManagers = (employeeArr) => {
-  // Write code here
+  const onlyManagersArray = employeeArr.filter( employee => {
+    return employee.isManagement === true;
+  })
+
+  return onlyManagersArray;
 };
 
 /**
@@ -37,7 +46,7 @@ export const getTheManagers = (employeeArr) => {
  * @returns {number} The number of the keys on the object
  */
 export const getNumberOfKeys = (object) => {
-  // Write code here
+  return Object.keys(object).length;
 };
 
 /* Intermediate Challenges */
@@ -49,8 +58,14 @@ export const getNumberOfKeys = (object) => {
  * @param {{name: string, price: number, hasFreeShipping: boolean, quantity: number}[]} shoppingBasketArr - An array of basket items for an online shop
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number}} The most expensive item in the shopping basket
  */
-export const findMostExpensiveItem = (shoppingBasketArr) => {
-  // Write code here
+export const findMostExpensiveItem =(shoppingBasketArr) => {
+  let pricesArr = shoppingBasketArr.map(basket => {
+    return basket.price;
+  })
+  let mostExpensiveIndex = pricesArr.indexOf(Math.max(pricesArr));
+
+  return shoppingBasketArr[mostExpensiveIndex];
+
 };
 
 /**
