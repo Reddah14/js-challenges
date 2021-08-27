@@ -118,7 +118,7 @@ describe("Testing Loader class", () => {
   });
 });
 
-xdescribe("Testing Counter class", () => {
+describe("Testing Counter class", () => {
   let lowCount, highCount, noCount;
 
   beforeEach(() => {

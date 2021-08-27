@@ -27,7 +27,8 @@ export class Coordinate {
    * @param {number} xCoord - 22.
    * @param {number} yCoord - 20.
    */
-  constructor(xCoord, yCoord) {
+  constructor(xCoord, yCoord) 
+  {
     this.xCoord = xCoord;
     this.yCoord = yCoord;
   }
@@ -60,8 +61,8 @@ export class Alert {
    * @return {string} "!!!! Are sure you want to proceed? !!!!"
    */
   printMessage() {
-    const formattedString = "!!!! " + this.message + " !!!!";
-    return formattedString;
+    return "!!!! " + this.message + " !!!!";
+
   }
 }
 
@@ -137,7 +138,9 @@ export class Counter {
    * Create an counter.
    * @param {number} count - 50
    */
-  constructor() {}
+  constructor(count = 0) {
+      this.count = count; 
+  }
 
   /**
    * A method that increments count by 1.
@@ -145,13 +148,26 @@ export class Counter {
    */
 
   // WRITE INCREMENT FUNCTION HERE
+  increment(count) { //This is a method!!!
+    count = this.count++;
 
+    return count;
+  }
   /**
    * A method that decrements count by 1 but will not go below 0.
    * @return {number} 49
    */
 
   // WRITE DECREMENT FUNCTION HERE
+  decrement(count) { //This is a method!!!
+    if (this.count === 0) {
+      return count;
+    } else {
+      count = this.count--;
+
+      return count;
+    }
+  }
 }
 
 /**
